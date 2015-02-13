@@ -4,7 +4,7 @@ function Start () {
 	
 }
 
-var movementSpeed:float = 0.02;
+var movementSpeed:float = 0.06;
 var isBackground:boolean = false;
 
 function Update () {
