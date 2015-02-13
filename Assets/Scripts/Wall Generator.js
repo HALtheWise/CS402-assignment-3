@@ -1,17 +1,25 @@
 ﻿#pragma strict
 
 function Start () {
-
+	lastTriggerTime = Time.time;
 }
 
 var topWall:GameObject;
 var bottomWall:GameObject;
 
+@HideInInspector
 var lastTop:float = 2;
-//var lastBottom:float;
+@HideInInspector
 var lastOpening:float = 0;
-var lastTrend:float = 0.8;
+@HideInInspector
+var lastTrend:float = 0;
+
 var gapSize:float = 6;
+
+var wallSpawnTime:float = 1;
+
+@HideInInspector
+var lastTriggerTime:float = 0;
 
 function Update () {
 	if(Input.GetKeyDown("a")){
@@ -20,6 +28,11 @@ function Update () {
 	
 	if(Input.GetKeyDown("s")){
 		planWalls();
+	}
+	
+	if (Time.time - lastTriggerTime >= wallSpawnTime){
+		planWalls();
+		lastTriggerTime += wallSpawnTime;	
 	}
 }
 

@@ -13,4 +13,8 @@ function Update () {
 	} else{
 		rigidbody.velocity.y -= downSpeed;
 	}
+	
+	transform.rotation = Quaternion.identity;
+	transform.position.z = 0;
+	rigidbody.velocity.x = 0;
 }
