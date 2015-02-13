@@ -2,24 +2,28 @@
 
 function Start () {
 	lastTriggerTime = Time.time;
+	destroyWalls();
+	lastOpening = 0;
+	lastTrend = 0;
+	lastTop = 2;
 }
 
 var topWall:GameObject;
 var bottomWall:GameObject;
 
 @HideInInspector
-var lastTop:float = 2;
+var lastTop:float;
 @HideInInspector
-var lastOpening:float = 0;
+var lastOpening:float;
 @HideInInspector
-var lastTrend:float = 0;
+var lastTrend:float;
 
 var gapSize:float = 6;
 
 var wallSpawnTime:float = 1;
 
 @HideInInspector
-var lastTriggerTime:float = 0;
+var lastTriggerTime:float;
 
 function Update () {
 	if(Input.GetKeyDown("a")){
@@ -65,8 +69,18 @@ function planWalls(){
 }
 
 function spawnWalls(top:float, bottom:float) {
-	GameObject.Instantiate(topWall, new Vector3(10,top+5,0), Quaternion.identity);
-	GameObject.Instantiate(bottomWall, new Vector3(10,bottom-5,0), Quaternion.identity);
+	walls.Push(GameObject.Instantiate(topWall, new Vector3(10,top+5,0), Quaternion.identity));
+	walls.Push(GameObject.Instantiate(bottomWall, new Vector3(10,bottom-5,0), Quaternion.identity));
+}
+
+@HideInInspector
+var walls:Array = new Array();
+
+function destroyWalls(){
+	while(walls.length > 0){
+		var obj:GameObject = walls.Pop();
+		GameObject.Destroy(obj);
+	}
 }
 
 function constrain(value:float, max:float, min:float) : float {
