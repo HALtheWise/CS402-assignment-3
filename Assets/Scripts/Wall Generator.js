@@ -61,12 +61,12 @@ function planWalls(){
 		
 		lastTop = constrain(lastTop, lastOpening+gapSize, lastOpening);
 	}
-	spawnWalls(lastTop, lastTop-gapSize);
+	spawnWalls(lastTop + Random.Range(0, 2), lastTop-gapSize - Random.Range(0, 2));
 }
 
 function spawnWalls(top:float, bottom:float) {
-	GameObject.Instantiate(topWall, new Vector3(0,top+5,0), Quaternion.identity);
-	GameObject.Instantiate(bottomWall, new Vector3(0,bottom-5,0), Quaternion.identity);
+	GameObject.Instantiate(topWall, new Vector3(10,top+5,0), Quaternion.identity);
+	GameObject.Instantiate(bottomWall, new Vector3(10,bottom-5,0), Quaternion.identity);
 }
 
 function constrain(value:float, max:float, min:float) : float {
