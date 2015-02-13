@@ -5,7 +5,10 @@ function Start () {
 }
 
 var movementSpeed:float = 0.02;
+var isBackground:boolean = false;
 
 function Update () {
-	transform.position.x -= movementSpeed;
+	var mvmtspd:float = movementSpeed;
+	if (isBackground) mvmtspd /= 2;
+	transform.position.x -= mvmtspd;
 }
