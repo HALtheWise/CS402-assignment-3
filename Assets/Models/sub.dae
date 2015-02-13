@@ -5,8 +5,8 @@
       <author>Blender User</author>
       <authoring_tool>Blender 2.73.0 commit date:2015-01-20, commit time:18:16, hash:bbf09d9</authoring_tool>
     </contributor>
-    <created>2015-02-13T11:12:18</created>
-    <modified>2015-02-13T11:12:18</modified>
+    <created>2015-02-13T11:17:56</created>
+    <modified>2015-02-13T11:17:56</modified>
     <unit name="meter" meter="1"/>
     <up_axis>Z_UP</up_axis>
   </asset>
@@ -244,7 +244,7 @@
         <instance_light url="#Lamp_001-light"/>
       </node>
       <node id="Submarine" name="Submarine" type="NODE">
-        <matrix sid="transform">1 0 0 0 0 7.54979e-8 -1 0 0 1 7.54979e-8 0 0 0 0 1</matrix>
+        <matrix sid="transform">-1 1.13999e-14 -1.50996e-7 0 -1.50996e-7 -7.54979e-8 1 0 0 1 7.54979e-8 0 0 0 0 1</matrix>
         <instance_geometry url="#Submarine_001-mesh"/>
       </node>
     </visual_scene>
