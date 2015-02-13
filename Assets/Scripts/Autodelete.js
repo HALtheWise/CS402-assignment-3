@@ -5,7 +5,7 @@ function Start () {
 }
 
 function Update () {
-	if (transform.position.x < -10 || transform.position.x > 10){
+	if (transform.position.x < -20 || transform.position.x > 20){
 		GameObject.Destroy(gameObject);
 	}
 }
